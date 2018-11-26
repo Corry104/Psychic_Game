@@ -18,5 +18,26 @@ var losses = 0;
 
 var guessesLeft = 10;
 
-var userChoice = Math.floor(Math.random()*compChoice.lenght)
+var userChoice = Math.floor(Math.random()*compChoice.lenght);
 
+
+
+document.onkeyup = function()  {
+
+if (compChoice === userChoice) {
+    win++;
+}  
+
+else {
+    guessesLeft--;
+}
+
+console.log(win);
+console.log(guessesLeft);
+
+document.getElementById("win").innerHTML = "Win: " + win;
+document.getElementById("losses").innerHTML = "losses: " + losses;
+document.getElementById("guessesLeft").innerHTML = "guessesLeft: " + guessesLeft;
+document.getElementById("userChoice").innerHTML = "userChoice: " + userChoice;
+
+};
