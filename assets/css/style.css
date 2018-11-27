@@ -3,18 +3,40 @@
  **/
   
  * {
-    position: relative; 
+    position: relative;
     overflow: auto;
  }
+
+ body     {
+     background-image: url('../images/images.jpeg');
+     height: 700px; 
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+ 
+    }
 
  h1 {
      font-size: 40px;
      font-family: Arial, Helvetica, sans-serif;
      font-weight: bold;
+     color: #dddddd;
+     text-align: center;
  }
 
  h2 {
      font-size: 20px;
      font-family: Arial, Helvetica, sans-serif;
-     font-style: italic;    
+     font-style: italic;  
+     color: #dddddd;
+     text-align: center;
+
  }
+
+ .container {
+     font-weight: bold;
+     font-family: Arial, Helvetica, sans-serif;
+     color: #dddddd;
+     text-align: center;
+ }
+
