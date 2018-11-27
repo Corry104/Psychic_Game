@@ -1,43 +1,48 @@
 //JavaScript The Psychic Game
 
-// window.onload = function() {
-//     alert("hello!");
-// }
 
-function myFunction()   {
-    var pippo = 100;
-    alert(pippo);
-}
-
-
-var compChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+var compChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var win = 0;
-
-var losses = 0;
-
+var loss = 0;
 var guessesLeft = 10;
+var userText = []; 
+var userGuess = null;
 
-var userChoice = Math.floor(Math.random()*compChoice.lenght);
+
+console.log(win);
+console.log(guessesLeft);
+console.log(loss);
+console.log(userGuess);
+console.log(userText);
+
+document.onkeyup = function(event)  {
+    var compChoice = compChoices[Math.floor(Math.random()*compChoices.length)];
+    userGuess = event.key
+    userText = event.key
 
 
 
-document.onkeyup = function()  {
-
-if (compChoice === userChoice) {
+if (compChoice === userGuess) {
     win++;
 }  
+
+else if (compChoice != userGuess) {
+    guessesLeft--;
+}
+
+else if (guessesLeft == 0) {
+    loss++;
+    guessesLeft = 10;
+}
 
 else {
     guessesLeft--;
 }
 
-console.log(win);
-console.log(guessesLeft);
 
-document.getElementById("win").innerHTML = "Win: " + win;
-document.getElementById("losses").innerHTML = "losses: " + losses;
-document.getElementById("guessesLeft").innerHTML = "guessesLeft: " + guessesLeft;
-document.getElementById("userChoice").innerHTML = "userChoice: " + userChoice;
+document.getElementById("win").innerHTML = "Win: " + "" + win;
+document.getElementById("loss").innerHTML = "Loss: " + "" + loss;
+document.getElementById("guessesLeft").innerHTML = "Guesses: " + "" + guessesLeft;
+document.getElementById("userGuess").innerHTML = "Your Choice: " + "" + userGuess;
 
 };
